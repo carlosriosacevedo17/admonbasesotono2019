@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Particionando">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="LAPTOP-LVCI7VHA:LAPTOP-LVCI7VHA\carlo">
+          <Created>2019-03-02T15:14:06.536811-06:00</Created>
+          <Type>SQL</Type>
+          <Server>LAPTOP-LVCI7VHA</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="00 Crear BD Pruebas.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>00 Crear BD Pruebas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="01 Crear file groups.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>01 Crear file groups.sql</FullPath>
+        </FileNode>
+        <FileNode Name="02 Agregar files a los file groups.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>02 Agregar files a los file groups.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03 Crear funcion de particion.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>03 Crear funcion de particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04 Crear esquema de particion.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>04 Crear esquema de particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05 Crear una tabla sobre un esquema particion.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>05 Crear una tabla sobre un esquema particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="06 Donde Entrarian los datos.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>06 Donde Entrarian los datos.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07 Insertar datos.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>07 Insertar datos.sql</FullPath>
+        </FileNode>
+        <FileNode Name="08 Y donde estan los datos.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>08 Y donde estan los datos.sql</FullPath>
+        </FileNode>
+        <FileNode Name="10 agregar particion.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-LVCI7VHA:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-LVCI7VHA</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>10 agregar particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12 Fusionar una particion.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>12 Fusionar una particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="11 Insertar datos en la nueva particion.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>11 Insertar datos en la nueva particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12 Mover una Particion.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>12 Mover una Particion.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Demo Crear Tabla sobre fg.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Demo Crear Tabla sobre fg.sql</FullPath>
+        </FileNode>
+        <FileNode Name="09 Cuantos Rangos hay en mis funciones.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>09 Cuantos Rangos hay en mis funciones.sql</FullPath>
+        </FileNode>
+        <FileNode Name="12 Crear Tabla con LOB.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>12 Crear Tabla con LOB.sql</FullPath>
+        </FileNode>
+        <FileNode Name="13 Vista Particionada.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>13 Vista Particionada.sql</FullPath>
+        </FileNode>
+        <FileNode Name="14 Crear tabla en un FileGroup.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>14 Crear tabla en un FileGroup.sql</FullPath>
+        </FileNode>
+        <FileNode Name="15 Insertar datos en Persona.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>15 Insertar datos en Persona.sql</FullPath>
+        </FileNode>
+        <FileNode Name="99 Crear BD y Fgs.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>99 Crear BD y Fgs.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items />
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

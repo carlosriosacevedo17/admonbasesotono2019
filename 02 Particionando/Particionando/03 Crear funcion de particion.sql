@@ -1,0 +1,44 @@
+use Pruebas;
+go
+
+CREATE PARTITION FUNCTION FP_FechasOrdenes (datetime)
+AS 
+RANGE RIGHT
+FOR VALUES ('01/01/2011', '01/01/2012', '01/01/2013',
+'01/01/2014');
+GO
+
+
+USE AdventureWorks2014
+GO
+SELECT COUNT(*) AS TOTAL FROM
+SALES.SalesOrderHeader
+GO
+
+
+
+
+
+/*
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+SPLIT RANGE  ('1/1/2002')
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+SPLIT RANGE  ('1/1/2003')
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+SPLIT RANGE  ('1/1/2004')
+
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+MERGE RANGE ('1/1/2006')
+
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+MERGE RANGE ('1/1/2007')
+
+ALTER PARTITION FUNCTION FP_ClicsWeb ()
+MERGE RANGE ('1/1/2008')
+
+
+SELECT * FROM sys.partition_range_values
+
+select * from sys.partition_functions
+
+*/
