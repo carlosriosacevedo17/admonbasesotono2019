@@ -1,0 +1,66 @@
+
+-- Create EmployeeReviews table and grant permissions
+USE AdventureWorks2014
+
+IF EXISTS (SELECT * FROM sys.tables t JOIN sys.schemas s ON t.schema_id = s.schema_id
+           WHERE t.[Name] = 'EmployeeReview' AND s.[Name] = 'HumanResources')
+ DROP TABLE HumanResources.EmployeeReview
+
+CREATE TABLE HumanResources.EmployeeReview
+(EmployeeID int NOT NULL,
+ ReviewDate datetime DEFAULT GETDATE() NOT NULL,
+ Comments varchar(2000) NOT NULL)
+
+GRANT SELECT, INSERT, UPDATE ON HumanResources.EmployeeReview
+TO HRApp
+
+
+-- Create database master key
+IF NOT EXISTS(SELECT * FROM sys.symmetric_keys WHERE name = '##MS_DatabaseMasterKey##')
+CREATE MASTER KEY 
+ENCRYPTION BY PASSWORD = 'Pa$$w0rd'
+
+-- Create certificate
+CREATE CERTIFICATE HRAppCert 
+AUTHORIZATION HRApp
+WITH SUBJECT = 'HR certificate'
+GO
+
+-- Create symmetric key
+CREATE SYMMETRIC KEY HRKey 
+AUTHORIZATION HRApp 
+WITH ALGORITHM = TRIPLE_DES 
+ENCRYPTION BY CERTIFICATE HRAppCert
+GO
+
+-- Insert encrypted data
+EXECUTE AS USER = 'HRApp'
+	OPEN SYMMETRIC KEY HRKey DECRYPTION BY CERTIFICATE HRAppCert
+
+	INSERT INTO HumanResources.EmployeeReview
+	VALUES
+	(1, DEFAULT, EncryptByKey(Key_GUID('HRKey'),'Increasing salary to $35,000'))
+
+	CLOSE ALL SYMMETRIC KEYS
+REVERT
+
+-- Read the decrypted data as HRApp
+EXECUTE AS USER = 'HRApp'
+	OPEN SYMMETRIC KEY HRKey DECRYPTION BY CERTIFICATE HRAppCert
+	SELECT CONVERT(varchar,DecryptByKey(Comments)) AS Comments FROM HumanResources.EmployeeReview
+	CLOSE ALL SYMMETRIC KEYS
+REVERT
+
+-- Try to read data as another user
+EXECUTE AS USER = 'Holly'
+	SELECT CONVERT(varchar,Comments) AS Comments FROM HumanResources.EmployeeReview
+REVERT
+
+
+-- Try to decrypt the data as another user
+EXECUTE AS USER = 'Holly'
+	OPEN SYMMETRIC KEY HRKey DECRYPTION BY CERTIFICATE HRAppCert
+	SELECT CONVERT(varchar,DecryptByKey(Comments)) AS Comments FROM HumanResources.EmployeeReview
+	CLOSE ALL SYMMETRIC KEYS
+REVERT
+
